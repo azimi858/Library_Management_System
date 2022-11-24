@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LmsApplication {
 
 	public static void main(String[] args) {
-	//	SpringApplication.run(LmsApplication.class, args);
-		System.out.println("Hello World!");
+		SpringApplication.run(LmsApplication.class, args);
 	}
 
 }
