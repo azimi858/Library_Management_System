@@ -16,6 +16,7 @@ public class Student {
     private String email;
     private Integer matriculationNumber;
     private LocalDate dateOfBirth;
+    @Transient
     private int age;
 
     public static int totalUserNumber;
@@ -32,7 +33,6 @@ public class Student {
         this.email = email;
         this.matriculationNumber = matriculationNumber;
         this.dateOfBirth = dateOfBirth;
-        this.age = Period.between(dateOfBirth, LocalDate.now()).getYears();
         totalUserNumber++;
     }
 
@@ -44,7 +44,6 @@ public class Student {
         this.email = email;
         this.matriculationNumber = matriculationNumber;
         this.dateOfBirth = dateOfBirth;
-        this.age = Period.between(dateOfBirth, LocalDate.now()).getYears();
         totalUserNumber++;
     }
 
@@ -97,7 +96,7 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
