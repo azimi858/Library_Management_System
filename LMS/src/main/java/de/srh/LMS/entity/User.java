@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.Period;
 @Entity
 @Table
-public class Student {
+public class User {
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
@@ -21,12 +21,12 @@ public class Student {
 
     public static int totalUserNumber;
 
-    public Student() {
+    public User() {
     }
 
     // TODO: Convert dateOfBirth Datatype from frontend to LocalDate
-    public Student(long id, String surname, String firstname, String email,
-                   int matriculationNumber, LocalDate dateOfBirth) {
+    public User(long id, String surname, String firstname, String email,
+                int matriculationNumber, LocalDate dateOfBirth) {
         this.id = id;
         this.surname = surname;
         this.firstname = firstname;
@@ -36,9 +36,9 @@ public class Student {
         totalUserNumber++;
     }
 
-    public Student(String surname, String firstname,
-                   String email, int matriculationNumber,
-                   LocalDate dateOfBirth) {
+    public User(String surname, String firstname,
+                String email, int matriculationNumber,
+                LocalDate dateOfBirth) {
         this.surname = surname;
         this.firstname = firstname;
         this.email = email;
@@ -105,7 +105,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "User{" +
                 "id=" + id +
                 ", surname='" + surname + '\'' +
                 ", firstname='" + firstname + '\'' +

@@ -12,7 +12,7 @@
 	<artifactId>LMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>LMS</name>
-	<description>Library Managemnt System SDP M.Sc. ACS 2022 @ SRH HD</description>
+	<description>Library Management System SDP M.Sc. ACS 2022 @ SRH HD</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
