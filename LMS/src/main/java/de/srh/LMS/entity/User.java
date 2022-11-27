@@ -25,9 +25,7 @@ public class User {
     private String firstname;
     private String email;
     private  String password;
-
-    @Transient
-    private int age;
+    private String username;
 
     public User(String surname, String firstname,
                 String email, String password) {
@@ -35,6 +33,7 @@ public class User {
         this.firstname = firstname;
         this.email = email;
         this.password = password;
+        this.username = email;
     }
 
     @Override
@@ -44,6 +43,7 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 '}';
     }
 }

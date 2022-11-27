@@ -3,8 +3,10 @@ package de.srh.LMS.controller;
 import de.srh.LMS.entity.User;
 import de.srh.LMS.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 // Data flow controller
 @RestController
