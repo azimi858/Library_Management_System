@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <button class="btn btn-primary d-grid w-100" type="button">Sign in</button>
+                            <button class="btn btn-primary d-grid w-100" type="button" onclick="login()">Sign in</button>
                         </div>
                     </form>
 
@@ -146,5 +146,19 @@
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
+<script>
+    const login = () => {
+        const email = $("#email").val();
+        const password = $("#password").val();
+        $.get('/api/v1/users', (users)=>{
+            const matched = users.filter(u=>u.email === email && u.password === password);
+            if (matched.length > 0){
+                location.href = "/";
+            }else{
+                alert('Email or Password Wrong!');
+            }
+        });
+    }
+</script>
 </body>
 </html>
