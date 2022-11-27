@@ -1,6 +1,7 @@
 package de.srh.LMS.service;
 
 import de.srh.LMS.entity.User;
+import de.srh.LMS.exception.UserNotFoundException;
 import de.srh.LMS.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,13 @@ public class UserService {
             throw new IllegalStateException("false email format");
         }
         userRepository.save(user);
+    }
+
+    public void deleteUser(Long userID){
+        if(!userRepository.existsById(userID)) {
+            throw new UserNotFoundException(
+                    "User with id " + userID + " does not exist");
+        }
+        userRepository.deleteById(userID);
     }
 }
