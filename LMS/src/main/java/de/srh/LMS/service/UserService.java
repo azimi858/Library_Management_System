@@ -33,6 +33,7 @@ public class UserService {
         if(!eMailValidationService.validateEMail(user)){
             throw new IllegalStateException("false email format");
         }
+        user.setUsername(user.getEmail());
         userRepository.save(user);
     }
 
@@ -42,5 +43,16 @@ public class UserService {
                     "User with id " + userID + " does not exist");
         }
         userRepository.deleteById(userID);
+    }
+
+    // TODO: Change UserProfile completely by ID PUT, GET User by id, email, PATCH-> Change ressources and fields
+    public void resetUserProfile(Long userID, User user){
+        if(!userRepository.existsById(userID)){
+            throw new UserNotFoundException(
+                    "User with id " + userID + " does not exist");
+        }
+        user.setId(userID);
+        user.setUsername(user.getEmail());
+        userRepository.save(user);
     }
 }

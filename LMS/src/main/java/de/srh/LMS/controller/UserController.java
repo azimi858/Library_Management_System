@@ -30,4 +30,12 @@ public class UserController {
     public void deleteUser(@PathVariable("userID") Long userID){
         userService.deleteUser(userID);
     }
+    @PutMapping(path = "{userID}")
+    public void resetUserProfile(@PathVariable("userID") Long userID, @RequestBody User newUser){
+        userService.resetUserProfile(userID, newUser);
+    }
+    @PatchMapping
+    public void changeUserProfile(){
+
+    }
 }
