@@ -17,17 +17,15 @@ public class UserConfig {
             User andreas = new User(
                     "Lakus",
                     "Andreas",
-                        "Andreas.Lakus@stud.hochschule-heidelberg.de",
-                        11012049,
-                        LocalDate.of(1986,04,01)
+                    "Andreas.Lakus@stud.hochschule-heidelberg.de",
+                    "123456"
             );
 
             User yogi = new User(
                     "Parihar",
                     "Yogesh",
                     "Yogesh.Parihar@stud.hochschule-heidelberg.de",
-                    11027728,
-                    LocalDate.of(1992,11,04)
+                    "123456"
             );
             userRepository.saveAll(List.of(andreas, yogi));
         };

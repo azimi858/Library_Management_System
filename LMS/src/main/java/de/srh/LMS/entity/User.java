@@ -1,8 +1,18 @@
 package de.srh.LMS.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+// Generates Table with Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class User {
@@ -14,93 +24,17 @@ public class User {
     private String surname;
     private String firstname;
     private String email;
-    private Integer matriculationNumber;
-    private LocalDate dateOfBirth;
+    private  String password;
+
     @Transient
     private int age;
 
-    public static int totalUserNumber;
-
-    public User() {
-    }
-
-    // TODO: Convert dateOfBirth Datatype from frontend to LocalDate
-    public User(long id, String surname, String firstname, String email,
-                int matriculationNumber, LocalDate dateOfBirth) {
-        this.id = id;
-        this.surname = surname;
-        this.firstname = firstname;
-        this.email = email;
-        this.matriculationNumber = matriculationNumber;
-        this.dateOfBirth = dateOfBirth;
-        totalUserNumber++;
-    }
-
     public User(String surname, String firstname,
-                String email, int matriculationNumber,
-                LocalDate dateOfBirth) {
+                String email, String password) {
         this.surname = surname;
         this.firstname = firstname;
         this.email = email;
-        this.matriculationNumber = matriculationNumber;
-        this.dateOfBirth = dateOfBirth;
-        totalUserNumber++;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getMatriculationNumber() {
-        return matriculationNumber;
-    }
-
-    public void setMatriculationNumber(Integer matriculationNumber) {
-        this.matriculationNumber = matriculationNumber;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Integer getAge() {
-        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+        this.password = password;
     }
 
     @Override
@@ -110,9 +44,6 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", email='" + email + '\'' +
-                ", matriculationNumber=" + matriculationNumber +
-                ", dateOfBirth=" + dateOfBirth +
-                ", age=" + age +
                 '}';
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-// TODO: Rename to users
+// Data flow controller
 @RestController
 @RequestMapping(path = "api/v1/users")
 public class UserController {

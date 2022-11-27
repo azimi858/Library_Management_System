@@ -12,7 +12,6 @@ public class UserTests {
     void testUserAgeCalc(){
         User usr = new User("Lakus", "Andreas",
                 "Andreas.Lakus@stud.hochschule-heidelberg.de",
-                11012049, LocalDate.of(1986,04,01));
-        System.out.println(usr.getAge());
+                "123456");
     }
 }

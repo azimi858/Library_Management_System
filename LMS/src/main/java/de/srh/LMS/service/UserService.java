@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+// Business Logic for Users
 @Service
 public class UserService {
     private final UserRepository userRepository;

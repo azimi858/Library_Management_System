@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-
+// QUERIES
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
