@@ -27,6 +27,15 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User getUserByID(Long userID) {
+        if(!userRepository.existsById(userID)) {
+            throw new UserNotFoundException(
+                    "User with id " + userID + " does not exist");
+        }
+        User user = userRepository.findUserByID(userID).get();
+        return user;
+    }
+
     public void addNewUser(User user) throws  IllegalStateException{
 
         if (eMailValidationService.eMailExists(user)){
