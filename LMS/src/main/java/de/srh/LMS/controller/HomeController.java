@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    @RequestMapping("/")
+    @RequestMapping(path="/")
     public String home() {
         return "home";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping(path="/login")
     public String login() {
         return "login";
     }
 
-    @RequestMapping("/register")
+    @RequestMapping(path="/register")
     public String register() {
         return "register";
     }
