@@ -34,8 +34,8 @@ public class UserController {
     public void resetUserProfile(@PathVariable("userID") Long userID, @RequestBody User newUser){
         userService.resetUserProfile(userID, newUser);
     }
-    @PatchMapping
-    public void changeUserProfile(){
-
+    @PatchMapping(path = "{userID}")
+    public void changeUserProfile(@PathVariable("userID") Long userID, @RequestBody User changeUser){
+        userService.changeUserProfile(userID, changeUser);
     }
 }
